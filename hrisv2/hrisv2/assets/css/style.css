@@ -1,0 +1,96 @@
+.content-container .sidebar {
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+}
+.content-container .sidebar .nav{
+    overflow-y: scroll;
+}
+.content-container .sidebar .nav::-webkit-scrollbar{
+    width: .4em;
+    visibility: hidden;
+}
+.content-container .sidebar .nav:hover::-webkit-scrollbar-thumb{
+    visibility: visible;
+    background-color: #0d6dfd94;
+    border-radius: 20px;
+}
+.content-container .sidebar .nav:hover::-webkit-scrollbar{
+    visibility: visible;
+}
+.content-container .sidebar .nav li a{
+    color: #000;
+}
+.content-container .sidebar .nav li a:hover{
+    background-color: #0d6efd;
+    color: #ffff;
+}
+.content-container .content{
+    background: #f2f6fc;
+    margin-left: 300px;
+    height: 100%;
+}
+.content-container .sidebar .nav li .nav-link .dropdown-arrow .bi{
+    transition: all ease-in-out .3s;
+}
+.content-container .sidebar .nav li .sub-nav{
+    height: 0;
+    transition: ease-out .8s;
+}
+.content-container .sidebar .nav li .sub-nav-second{
+    height: 0;
+    transition: ease-out .5s;
+}
+.content-container .sidebar .nav li .nav-link .dropdown-arrow .bi{
+    transition: all ease-in-out .3s;
+}
+.content-container .sidebar .nav li .sub-nav-third{
+    height: 0;
+    transition: ease-out .5s;
+}
+.content-container .sidebar .nav li .nav-link .dropdown-arrow .bi{
+    transition: all ease-in-out .3s;
+}
+.content-container .sidebar .nav li.toggle .sub-nav{
+    height: 325px;
+}
+.content-container .sidebar .nav li.toggle .sub-nav-second{
+    height: 120px;
+}
+.content-container .sidebar .nav li.toggle .sub-nav-third{
+    height: 120px;
+}
+.content-container .sidebar .nav li.toggle .nav-link .dropdown-arrow .bi{
+    transform: rotate(90deg);
+    transition: all ease-in-out .5s;
+}
+.content-container .sidebar .nav li.toggle .dropdown-title{
+    background-color: #0d6efd;
+    color: #ffff;
+}
+.content-container .sidebar .dropdown ul li a:hover{
+    background-color: #0d6efd;
+    color: #ffff;
+}
+.content-container .content .header{
+    height: 300px;
+}
+.content-container .content .container{
+    margin-top: -150px;
+}
+.content-container .content .header .nav li .nav-link{
+    transition: all ease 1s;
+}
+.content-container .content .header .nav li .nav-link::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #ffff;
+    transform: scale(0, 1);
+    transition: transform 200ms ease-out;
+}
+.content-container .content .header .nav li .nav-link:hover::after{
+    transform: scale(1, 1);
+}
+
