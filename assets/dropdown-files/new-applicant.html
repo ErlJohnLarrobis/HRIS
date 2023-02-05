@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Human Resources Information System</title>
+        <link rel="stylesheet" href="/hrisv2/assets/css/style.css">
+        <link
+            rel="stylesheet"
+            href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+            crossorigin="anonymous">
+        <style>
+            .content-container .sidebar .nav li .sub-nav {
+                height: 325px;
+            }
+            .content-container .sidebar .nav li.toggle .sub-nav {
+                height: 0;
+            }
+        </style>
+    </head>
+</head>
+<body>
+    <div class="content-container" id="collapse">
+        <div class="sidebar d-flex flex-column flex-shrink-0 bg-light shadow">
+            <div class="sidebar-header">
+                <a
+                    href="/hrisv2/index.html"
+                    class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none gap-3 float-start">
+                    <img src="/hrisv2/assets/images/logo.png" alt="logo" width="50">
+                    <span class="fs-4">
+                        <strong>HRIS</strong>
+                    </span>
+                </a>
+                <button class="btn btn-primary float-end mt-2" onclick="collapse()">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto d-block">
+                <li id="first">
+                    <a href="#" class="nav-link dropdown-title" onclick="recruitment()">
+                        <i class="bi bi-person-gear me-2"></i>
+                        <span>Recruitment</span>
+                        <span class="dropdown-arrow">
+                            <i class="bi bi-caret-right-fill float-end"></i>
+                        </span>
+                    </a>
+                    <ul class="sub-nav nav nav-pills flex-column mb-auto d-block ms-5">
+                        <li>
+                            <a
+                                href="/hrisv2/assets/dropdown-files/new-applicant.html"
+                                class="nav-link active text-white">New Applicant</a>
+                        </li>
+                        <li>
+                            <a href="/hrisv2/assets/dropdown-files/post-job-vacancy.html" class="nav-link">Post Job Vacancy</a>
+                        </li>
+                        <li>
+                            <a href="/hrisv2/assets/dropdown-files/applicant-campus.html" class="nav-link">Applicants by Campus</a>
+                        </li>
+                        <li>
+                            <a
+                                href="/hrisv2/assets/dropdown-files/applicant-discipline.html"
+                                class="nav-link">Applicants by Discipline</a>
+                        </li>
+                        <li>
+                            <a href="/hrisv2/assets/dropdown-files/assign-panels.html" class="nav-link">Assign Panels</a>
+                        </li>
+                        <li>
+                            <a href="/hrisv2/assets/dropdown-files/assessment.html" class="nav-link">Assessment</a>
+                        </li>
+                        <li>
+                            <a
+                                href="/hrisv2/assets/dropdown-files/applicant-directory.html"
+                                class="nav-link">Applicant Directory</a>
+                        </li>
+                        <li>
+                            <a
+                                href="/hrisv2/assets/dropdown-files/panel-request-access.html"
+                                class="nav-link">Panel Request Access</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/plantilla.html" class="nav-link">
+                        <i class="bi bi-file-earmark-medical me-2"></i>
+                        <span>Plantilla</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/add-employee.html" class="nav-link">
+                        <i class="bi bi-person-add me-2"></i>
+                        <span>Add Employee</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/personal-data.html" class="nav-link">
+                        <i class="bi bi-clipboard2-data me-2"></i>
+                        <span>Personal Data</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/upload-picture.html" class="nav-link">
+                        <i class="bi bi-upload me-2"></i>
+                        <span>Upload Picture</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/employment-records.html" class="nav-link">
+                        <i class="bi bi-person-vcard me-2"></i>
+                        <span>Employment Records</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/separations.html" class="nav-link">
+                        <i class="bi bi-arrows-expand me-2 rotate"></i>
+                        <span>Separations</span>
+                    </a>
+                </li>
+                <li id="second">
+                    <a href="#" class="nav-link dropdown-title" onclick="leaves()">
+                        <i class="bi bi-door-open me-2"></i>
+                        <span>Leaves</span>
+                        <span class="dropdown-arrow">
+                            <i class="bi bi-caret-right-fill float-end"></i>
+                        </span>
+                    </a>
+                    <ul class="sub-nav-second nav nav-pills flex-column mb-auto d-block ms-5">
+                        <li>
+                            <a href="" class="nav-link">one</a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-link">two</a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-link">three</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/rewards-awards.html" class="nav-link">
+                        <i class="bi bi-gift me-2"></i>
+                        <span>Rewards and Awards</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/request-documents.html" class="nav-link">
+                        <i class="bi bi-file-check me-2"></i>
+                        <span>Request Documents</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/offenses.html" class="nav-link">
+                        <i class="bi bi-clipboard2-x me-2"></i>
+                        <span>Offenses</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/search.html" class="nav-link">
+                        <i class="bi bi-search me-2"></i>
+                        <span>Search</span>
+                    </a>
+                </li>
+                <li id="third">
+                    <a href="#" class="nav-link dropdown-title" onclick="reports()">
+                        <i class="bi bi-journal-check me-2"></i>
+                        <span>Reports</span>
+                        <span class="dropdown-arrow">
+                            <i class="bi bi-caret-right-fill float-end"></i>
+                        </span>
+                    </a>
+                    <ul class="sub-nav-third nav nav-pills flex-column mb-auto d-block ms-5">
+                        <li>
+                            <a href="" class="nav-link">one</a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-link">two</a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-link">three</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/feedbacks.html" class="nav-link">
+                        <i class="bi bi-chat-left-text me-2"></i>
+                        <span>Feedbacks</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/birthday.html" class="nav-link">
+                        <i class="bi bi-balloon me-2"></i>
+                        <span>Birthday</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/managed-quotes.html" class="nav-link">
+                        <i class="bi bi-chat-left-quote me-2"></i>
+                        <span>Managed Quotes</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="profile dropdown bg-primary p-2 rounded">
+                <a
+                    href="#"
+                    class="d-flex align-items-center text-decoration-none dropdown-toggle text-white"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <img
+                        src="/hrisv2/assets/images/profile.png"
+                        alt=""
+                        width="32"
+                        height="32"
+                        class="rounded-circle me-2">
+                    <strong>Superman</strong>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-light text-small shadow px-2">
+                    <li>
+                        <a class="dropdown-item rounded" href="#">Settings</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item rounded" href="#">Profile</a>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <a class="dropdown-item rounded" href="#">Sign out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="content">
+            <div class="button-uncollapse position-relative">
+                <button class="btn position-fixed" onclick="uncollapse()">
+                    <i class="bi bi-arrow-right"></i><i class="bi bi-arrow-left"></i>
+                </button>
+            </div>
+            <div class="header bg-primary p-3">
+                <p class="fs-3 text text-white">New Applicant</p>
+                <ul class="nav nav-pills">
+                    <li>
+                        <a href="" class="nav-link bg-white">New Applicant</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link text-white">Change Info</a>
+                    </li>
+                    <li>
+                        <a href="" class="nav-link text-white">Deleted</a>
+                    </li>
+                    <li>
+                        <a href="" class="nav-link text-white">Status</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="container bg-light shadow-lg rounded py-3">
+                <form
+                    class="row justify-content-center needs-validation mb-5 pt-5"
+                    novalidate="novalidate">
+                    <div class="mb-3 col-8">
+                        <label for="example-select" class="form-label">Position:</label>
+                        <select class="form-select" id="position" required="required">
+                            <option selected="selected" disabled="disabled" value=""></option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <div class="invalid-feedback">Please provide a valid Position !</div>
+                    </div>
+                    <div class="mb-3 col-8">
+                        <label for="fname" class="form-label">Name:</label>
+                        <div class="d-flex justify-content-between">
+                            <div class="flex-column">
+                                <input
+                                    type="text"
+                                    id="firstname"
+                                    class="form-control"
+                                    placeholder="First Name"
+                                    required="required">
+                                <div class="invalid-feedback flex-column">Please provide a valid First Name !</div>
+                            </div>
+                            <div class="flex-column">
+                                <input
+                                    type="text"
+                                    id="middlename"
+                                    class="form-control"
+                                    placeholder="Middle Name"
+                                    required="required">
+                                <div class="invalid-feedback">Please provide a valid Middle Name !</div>
+                            </div>
+                            <div class="flex-column">
+                                <input
+                                    type="text"
+                                    id="lastname"
+                                    class="form-control"
+                                    placeholder="Last name"
+                                    required="required">
+                                <div class="invalid-feedback">Please provide a valid Last name !</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 col-8">
+                        <label for="contact" class="form-label">Contact Number:</label>
+                        <input type="number" id="contact" class="form-control" required="required">
+                        <div class="invalid-feedback">Please provide a valid Mobile Number !</div>
+                    </div>
+                    <div class="mb-3 col-8">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" id="email" class="form-control" required="required">
+                        <div class="invalid-feedback">Please provide a valid Email !</div>
+                    </div>
+                    <div class="mb-3 col-8">
+                        <label for="adress" class="form-label">Address:</label>
+                        <div class="d-flex justify-content-between">
+                            <div class="mb-3 col-6">
+                                <input
+                                    type="text"
+                                    id="brgy/steet"
+                                    class="form-control"
+                                    placeholder="Barangay/Street"
+                                    required="required">
+                                <div class="invalid-feedback">Please provide a Barangay/Street !</div>
+                            </div>
+                            <div class="mb-3 col-5">
+                                <input
+                                    type="text"
+                                    id="town/city"
+                                    class="form-control"
+                                    placeholder="Town/City"
+                                    required="required">
+                                <div class="invalid-feedback">Please provide a Town/City !</div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div class="mb-3 col-8">
+                                <input
+                                    type="text"
+                                    id="province"
+                                    class="form-control"
+                                    placeholder="Province"
+                                    required="required">
+                                <div class="invalid-feedback">Please provide a valid Province !</div>
+                            </div>
+                            <div class="mb-3 col-3">
+                                <input
+                                    type="text"
+                                    id="zipcode"
+                                    class="form-control"
+                                    placeholder="Zipcode"
+                                    required="required">
+                                <div class="invalid-feedback">Please provide a valid Zipcode !</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 col-8">
+                        <label for="birthdate" class="form-label">Birthdate:</label>
+                        <input type="date" id="birthdate" class="form-control" required="required">
+                        <div class="invalid-feedback">Please provide a valid Birthdate !</div>
+                    </div>
+                    <div class="mb-3 col-8">
+                        <label for="age" class="form-label">Age:</label>
+                        <input type="number" id="age" class="form-control" required="required">
+                        <div class="invalid-feedback">Please provide a valid Age !</div>
+                    </div>
+                    <div class="mb-3 col-8">
+                        <label for="gender" class="form-label">Gender:</label>
+                        <select id="gender" class="form-select" required="required">
+                            <option value="" selected="selected" disabled="disabled">Select Gender</option>
+                            <option value="">Male</option>
+                            <option value="">Female</option>
+                        </select>
+                        <div class="invalid-feedback">Please provide a valid Gender !</div>
+                    </div>
+                    <div class="mb-3 col-8">
+                        <label for="Specialization/major" class="form-label">Specialization/Major:</label>
+                        <div class="input-group">
+                            <select class="form-select" id="Specialization/major" required="required">
+                                <option selected="selected" disabled="disabled" value=""></option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                            <button class="btn btn-primary">
+                                <i class="bi bi-plus-lg"></i>
+                            </button>
+                        </div>
+                        <div class="invalid-feedback">Please provide a Specialization?Major !</div>
+                    </div>
+                    <div class="mb-3 col-8">
+                        <label for="date-apply" class="form-label">Date Apply:</label>
+                        <input type="date" id="date-apply" class="form-control" required="required">
+                        <div class="invalid-feedback">Please provide a valid Date Apply !</div>
+                    </div>
+                    <div class="mb-3 col-8">
+                        <label for="education" class="form-label">Education:</label>
+                        <input type="text" id="education" class="form-control" required="required">
+                        <div class="invalid-feedback">Please provide a valid Education !</div>
+                    </div>
+                    <div class="mb-3 col-8">
+                        <label for="workExperience" class="form-label">Work Experienced:</label>
+                        <input type="text" id="workExperience" class="form-control" required="required">
+                        <div class="invalid-feedback">Please provide a Work Experienced !</div>
+                    </div>
+                    <div class="mb-3 col-8">
+                        <label for="eligibility" class="form-label">Eligibility:</label>
+                        <input type="text" id="eligibility" class="form-control" required="required">
+                        <div class="invalid-feedback">Please provide a valid Eligibility !</div>
+                    </div>
+                    <div class="col-8">
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </div>
+                </form>
+                <div class="table">
+                    <table id="data-table" class="table table-hover mt-5">
+                        <thead class="text-white bg-primary">
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Campus/Branch</th>
+                            <th>Division/College</th>
+                            <th>Position</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>dsa</td>
+                                <td>da</td>
+                                <td>das</td>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <td>das</td>
+                                <td>das</td>
+                                <td>da</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="/hrisv2/assets/scripts/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#data-table').DataTable();
+        });
+    </script>
+    <script>
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array
+                .from(forms)
+                .forEach(form => {
+                    form.addEventListener('submit', event => {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form
+                            .classList
+                            .add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+</html>
