@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Human Resources Information System</title>
+        <link rel="stylesheet" href="/hrisv2/assets/css/style.css">
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"/>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+            crossorigin="anonymous">
+    </head>
+</head>
+<body>
+    <div class="content-container" id="collapse">
+        <div class="sidebar d-flex flex-column flex-shrink-0 p-3 bg-light shadow">
+            <a
+                href="index.php"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none gap-3">
+                <img src="/hrisv2/assets/images/logo.png" alt="logo" width="50">
+                <span class="fs-4">HRIS</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto d-block">
+                <li id="first">
+                    <a href="#" class="nav-link dropdown-title" onclick="recruitment()">
+                        <i class="bi bi-person-gear me-2"></i>
+                        <span>Recruitment</span>
+                        <span class="dropdown-arrow bg-dark">
+                            <i class="bi bi-caret-right-fill float-end"></i>
+                        </span>
+                    </a>
+                    <ul class="sub-nav nav nav-pills flex-column mb-auto d-block ms-5">
+                        <li>
+                            <a href="/hrisv2/assets/dropdown-files/new-applicant.php" class="nav-link">New Applicant</a>
+                        </li>
+                        <li>
+                            <a href="/hrisv2/assets/dropdown-files/post-job-vacancy.php" class="nav-link">Post Job Vacancy</a>
+                        </li>
+                        <li>
+                            <a href="/hrisv2/assets/dropdown-files/applicant-campus.php" class="nav-link">Applicants by Campus</a>
+                        </li>
+                        <li>
+                            <a
+                                href="/hrisv2/assets/dropdown-files/applicant-discipline.php"
+                                class="nav-link">Applicants by Discipline</a>
+                        </li>
+                        <li>
+                            <a href="/hrisv2/assets/dropdown-files/assign-panels.php" class="nav-link">Assign Panels</a>
+                        </li>
+                        <li>
+                            <a href="/hrisv2/assets/dropdown-files/assessment.php" class="nav-link">Assessment</a>
+                        </li>
+                        <li>
+                            <a
+                                href="/hrisv2/assets/dropdown-files/applicant-directory.php"
+                                class="nav-link">Applicant Directory</a>
+                        </li>
+                        <li>
+                            <a
+                                href="/hrisv2/assets/dropdown-files/panel-request-access.php"
+                                class="nav-link">Panel Request Access</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/plantilla.php" class="nav-link">
+                        <i class="bi bi-file-earmark-medical me-2"></i>
+                        <span>Plantilla</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/add-employee.php" class="nav-link">
+                        <i class="bi bi-person-add me-2"></i>
+                        <span>Add Employee</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/personal-data.php" class="nav-link">
+                        <i class="bi bi-clipboard2-data me-2"></i>
+                        <span>Personal Data</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/upload-picture.php" class="nav-link">
+                        <i class="bi bi-upload me-2"></i>
+                        <span>Upload Picture</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/employment-records.php" class="nav-link">
+                        <i class="bi bi-person-vcard me-2"></i>
+                        <span>Employment Records</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/separations.php" class="nav-link">
+                        <i class="bi bi-arrows-expand me-2 rotate"></i>
+                        <span>Separations</span>
+                    </a>
+                </li>
+                <li id="second">
+                    <a href="#" class="nav-link dropdown-title" onclick="leaves()">
+                        <i class="bi bi-door-open me-2"></i>
+                        <span>Leaves</span>
+                        <span class="dropdown-arrow">
+                            <i class="bi bi-caret-right-fill float-end"></i>
+                        </span>
+                    </a>
+                    <ul class="sub-nav-second nav nav-pills flex-column mb-auto d-block ms-5">
+                        <li>
+                            <a href="" class="nav-link">Types of Leaves</a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-link">Employee Benefits</a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-link">Apply Leaves</a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-link">Summmary</a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-link">Old Balance Leaves</a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-link">Employee Force Leave/Tardines</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/rewards-awards.php" class="nav-link">
+                        <i class="bi bi-gift me-2"></i>
+                        <span>Rewards and Awards</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/request-documents.php" class="nav-link">
+                        <i class="bi bi-file-check me-2"></i>
+                        <span>Request Documents</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/offenses.php" class="nav-link">
+                        <i class="bi bi-clipboard2-x me-2"></i>
+                        <span>Offenses</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/search.php" class="nav-link">
+                        <i class="bi bi-search me-2"></i>
+                        <span>Search</span>
+                    </a>
+                </li>
+                <li id="third">
+                    <a href="#" class="nav-link dropdown-title" onclick="reports()">
+                        <i class="bi bi-journal-check me-2"></i>
+                        <span>Reports</span>
+                        <span class="dropdown-arrow">
+                            <i class="bi bi-caret-right-fill float-end"></i>
+                        </span>
+                    </a>
+                    <ul class="sub-nav-third nav nav-pills flex-column mb-auto d-block ms-5">
+                        <li>
+                            <a href="" class="nav-link">Print PDS</a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-link">Loyalty Candidates</a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-link">Step Increments</a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-link">Summary Absences</a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-link">Employee ID Numbers</a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-link">Candidates for Retirement</a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-link">Statistics and Summary</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/hrisv2/assets/links/birthday.php" class="nav-link">
+                        <i class="bi bi-balloon me-2"></i>
+                        <span>Birthday</span>
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <div class="dropdown bg-primary p-2 rounded">
+                <a
+                    href="#"
+                    class="d-flex align-items-center text-decoration-none dropdown-toggle text-white"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <img
+                        src="/hrisv2/assets/images/profile.png"
+                        alt=""
+                        width="32"
+                        height="32"
+                        class="rounded-circle me-2">
+                    <strong>Superman</strong>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-light text-small shadow px-2">
+                    <li>
+                        <a class="dropdown-item rounded" href="#">Settings</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item rounded" href="#">Profile</a>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <a class="dropdown-item rounded" href="#">Sign out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="content">
+            
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="/hrisv2/assets/scripts/main.js"></script>
+    <script>
+      $(document).ready(function() {
+          $('#data-table').DataTable();
+      });
+      </script>
+</body>
+    </html>
